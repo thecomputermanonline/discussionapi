@@ -36,11 +36,42 @@ Run the web server
 Go to `127.0.0.1/graphql/explorer` to run examples or if you prefer append the request to `127.0.0.1/graphql?query=` 
 ``
 
+Request:
+
+   
+      {
+          userFields {
+            id
+          }
+      }
+
+
+Response:
+
+    
+       {
+      {
+        "data": {
+          "userFields": [
+            {
+              "id": "1"
+            },
+            {
+              "id": "2"
+            },
+            {
+              "id": "3"
+            }
+          ]
+        }
+      }
+    
+
 
 Request:
 
    
-      user(id:"61") {
+      user(id:"1") {
            id
            countUnreadMessages
            messages {
@@ -55,7 +86,7 @@ Response:
        {
          "data": {
            "user": {
-             "id": "61",
+             "id": "1",
              "countUnreadMessages": 2,
              "messages": [
                {
@@ -76,7 +107,7 @@ Response:
 Request:
 
    
-       user(id:"61") {
+       user(id:"1") {
          firstName
          countUnreadMessages
          messages {
@@ -114,46 +145,46 @@ Response:
              ],
              "threads": [
                {
-                 "id": "16",
+                 "id": "1",
                  "participants": [
                    {
-                     "id": "61"
+                     "id": "1"
                    }
                  ],
                  "messages": []
                },
                {
-                 "id": "17",
+                 "id": "2",
                  "participants": [
                    {
-                     "id": "61"
+                     "id": "1"
                    }
                  ],
                  "messages": []
                },
                {
-                 "id": "18",
+                 "id": "3",
                  "participants": [
                    {
-                     "id": "61"
+                     "id": "1"
                    }
                  ],
                  "messages": []
                },
                {
-                 "id": "19",
+                 "id": "4",
                  "participants": [
                    {
-                     "id": "61"
+                     "id": "1"
                    }
                  ],
                  "messages": []
                },
                {
-                 "id": "20",
+                 "id": "5",
                  "participants": [
                    {
-                     "id": "61"
+                     "id": "1"
                    }
                  ],
                  "messages": [
@@ -181,7 +212,7 @@ Request:
 
    
     mutation{
-      addMetadata(metadata:{readDate:"1/1/2019",message:"3", user:"61"}) {
+      addMetadata(metadata:{readDate:"1/1/2019",message:"3", user:"1"}) {
         id
       }
     }
@@ -219,3 +250,5 @@ Response:
            }
          }
     }
+    
+    NB:IDS might be different depending on your datbase increment
