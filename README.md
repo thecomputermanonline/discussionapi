@@ -5,14 +5,32 @@ This is a discussion api  using [GraphQLBundle](https://github.com/Youshido/Grap
 
 ### How to Run
 
-Install dependencies:
+
+Clone the app :
+
+    git clone https://github.com/thecomputermanonline/discussionapi.git
+
+ Install dependencies:
 
     composer install
 
-Add Databse credentials in .env file and Run the web server:
+Add Database credentials in .env file make the migration
 
-    bin/console server:run
+     bin/console make:migration
 
+Run the migration
+
+     bin/console doctrine:migrations:migrate
+     
+load the the Fixtures to have some sample datta
+
+     bin/console doctrine:fixtures:load
+   
+
+Run the web server
+
+     bin/console server:run
+     
 
 ### Example Query
 Go to `127.0.0.1/graphql/explorer` to run examples or if you prefer append the request to `127.0.0.1/graphql?query=` 
