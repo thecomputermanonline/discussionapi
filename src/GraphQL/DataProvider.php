@@ -123,7 +123,7 @@ class DataProvider
     }
     public function countUnreadMessages($value){
 
-
+//unreadmessages means messages without no metadata
         $counter = 0;
         foreach ($value->getMessages() as $message){
              $count = $message->getMetadatas()->count();
