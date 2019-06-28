@@ -9,7 +9,7 @@ Install dependencies:
 
     composer install
 
-Run the web server:
+Add Databse credentials in .env file and Run the web server:
 
     bin/console server:run
 
