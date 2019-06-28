@@ -14,7 +14,7 @@ Clone the app :
 
     composer install
 
-Add Database credentials in .env file make the migration
+Add Database credentials in .env file and make the migration
 
      bin/console make:migration
 
