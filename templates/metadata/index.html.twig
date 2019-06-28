@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Metadata index{% endblock %}
+
+{% block body %}
+    <h1>Metadata index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Readdate</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for metadata in metadata %}
+            <tr>
+                <td>{{ metadata.id }}</td>
+                <td>{{ metadata.readdate }}</td>
+                <td>
+                    <a href="{{ path('metadata_show', {'id': metadata.id}) }}">show</a>
+                    <a href="{{ path('metadata_edit', {'id': metadata.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('metadata_new') }}">Create new</a>
+{% endblock %}
